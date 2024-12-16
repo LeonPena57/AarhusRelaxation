@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aarhus Relaxation</title>
     <link rel="stylesheet" href="./index.css">
-    <link rel="stylesheet" href="index.html">
+    <link rel="stylesheet" href="./1_Header/header.css">
     <link rel="stylesheet" href="/1_footer/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,35 @@
 </head>
 <body>
 
-    <div id="header-placeholder"></div>
+    <header>
+        <!-- PC Header -->
+        <nav class="pcheader">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">Park13</a></li>
+                <li><a href="services.html">Botanical Garden</a></li>
+                <li><a href="/Infinite/infinite.html">Infinite Bridge</a></li>
+            </ul>
+        </nav>
+    
+        <!-- Burger Menu -->
+        <div class="burger-icon" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    
+        <div class="menu-overlay" id="menuOverlay">
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">Park13</a></li>
+                    <li><a href="services.html">Botanical Garden</a></li>
+                    <li><a href="/Infinite/infinite.html">Infinite Bridge</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <div class="top-section">
         <video autoplay muted loop class="background-video" playsinline>
@@ -25,14 +53,15 @@
             <img src="/images/REDAarhusLogo.png" alt="Aarhus Relaxation Logo">
         </div>
     </div>
-    <div class="grid-section">
-        <div class="grid-item">
-            <img src="/1_home/images/HInifinite.jpg" alt="Infinity Bridge">
-            <div class="overlay">
-                <h3>INFINITY BRIDGE</h3>
+    <div class="grid-item">
+        <img src="/1_home/images/HInifinite.jpg" alt="Infinity Bridge">
+        <div class="overlay">
+            <h3>INFINITY BRIDGE</h3>
+            <a href="./Infinite/infinite.html">
                 <button>DISCOVER</button>
-            </div>
+            </a>
         </div>
+    </div>    
         <div class="grid-item">
             <img src="/1_home/images/HPark13.jpg" alt="Park 13">
             <div class="overlay">
@@ -51,7 +80,7 @@
     <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
 
-    <script src="/1_header/header.js"></script>
+    <script src="/1_Header/header.js"></script>
     <script src="/script.js"></script>
 </body>
 </html>
