@@ -3,9 +3,9 @@
     font-family: "Contrail One", serif;
     font-weight: 400;
     font-style: normal;
-  }
+}
 
-  @font-face {
+@font-face {
     font-family: "Trueno UltraBlack"; /* Name of the font */
     src: url("/fonts/TruenoUltBlk.otf") format("opentype"); /* Path to the font */
     font-weight: 900; /* Weight for UltraBlack */
@@ -22,7 +22,7 @@ body, html {
 .top-section {
     position: relative;
     width: 100%;
-    height: 550px;
+    height: 585px; /* Reduced video height for better fit */
     overflow: hidden;
 }
 
@@ -33,7 +33,7 @@ body, html {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: blur(2px);
+    filter: blur(1px);
 }
 
 .logo-overlay {
@@ -46,24 +46,26 @@ body, html {
 
 .logo-overlay img {
     max-width: 300px;
-    filter: drop-shadow(0px 15px 4px rgba(0, 0, 0, 0.2)); /* Adds a soft shadow effect */
+    filter: drop-shadow(0px 15px 4px rgba(0, 0, 0, 0.2));
 }
 
-/* Grid Section */
+/* Grid Section for the 3 Boxes */
 .grid-section {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow wrapping on mobile */
+    margin: 0; /* Removed padding and margin */
 }
 
 .grid-item {
     position: relative;
-    overflow: hidden;
-    border-radius: px;
+    width: 576px; /* Image width */
+    height: 533px; /* Image height */
 }
 
 .grid-item img {
     width: 100%;
-    height: 570px;
+    height: 100%;
     object-fit: cover;
     display: block;
 }
@@ -73,7 +75,7 @@ body, html {
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 60px;
+    padding: 20px;
     color: white;
     text-shadow: black 2px 5px;
     text-align: center;
@@ -86,13 +88,13 @@ body, html {
     font-size: 28px;
     padding: 5px;
     text-transform: uppercase;
-    font-family: "Trueno UltraBlack", sans-serif; /* Use your custom font */
-    -webkit-text-stroke: 1px black; /* Adds a 1px black stroke */
-    color: white; /* Inside fill color */
+    font-family: "Trueno UltraBlack", sans-serif;
+    -webkit-text-stroke: 1px black;
+    color: white;
 }
 
 .overlay button {
-    margin-top: 0px;
+    margin-top: 10px;
     padding: 8px 40px;
     font-size: 24px;
     border: none;
@@ -101,13 +103,58 @@ body, html {
     color: white;
     cursor: pointer;
     text-transform: uppercase;
-    font-family: "Trueno UltraBlack", sans-serif; /* Use your custom font */
-    transition: background 0.3s ease, box-shadow 0.3s ease; /* Add smooth transition */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.8); /* Default subtle shadow */
+    font-family: "Trueno UltraBlack", sans-serif;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.8);
 }
 
 .overlay button:hover {
-    background: #282828; /* Darker background color on hover */
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
+    background: #282828;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
 }
 
+/* Footer Section */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .top-section {
+        height: 400px; /* Adjusted video height for mobile */
+    }
+
+    .background-video {
+        height: 350px; /* Reduced video height for mobile */
+    }
+
+    .logo-overlay img {
+        max-width: 200px; /* Smaller logo size on mobile */
+    }
+
+    .grid-section {
+        flex-direction: column; /* Stack images vertically on mobile */
+        gap: 20px; /* 20px gap between images on mobile */
+        margin-top: 20px; /* Adjust space between video and images */
+    }
+
+    .grid-item {
+        width: 100%; /* Full width on mobile */
+        height: 300px; /* Ensure consistent image height on mobile */
+    }
+
+    .overlay h3 {
+        font-size: 20px; /* Smaller font size on mobile */
+    }
+
+    .overlay button {
+        font-size: 20px; /* Smaller button size on mobile */
+    }
+
+    /* Ensure gap between video and grid is the same as image gap */
+    .top-section {
+        margin-bottom: -50px; /* Add 20px space below the video */
+    }
+}

@@ -12,8 +12,8 @@ header {
     left: 0;
     width: 100%;
     z-index: 9999; /* Ensures it's on top of everything */
-    margin: 0;
-    padding: 0;
+    background-color: rgba(240, 242, 247, 0.7); /* Semi-transparent header */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* PC Header */
@@ -21,7 +21,8 @@ nav.pcheader {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(240, 242, 247, 0.75);
+    padding: 15px 0; /* Adds space inside header */
+    background-color: rgba(240, 242, 247, 0.5);
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -51,16 +52,16 @@ nav.pcheader ul li a {
     right: 10px;
     width: 60px;
     height: 60px;
-    background-color: rgba(232, 235, 244, 0.75); /* 75% opacity */
+    background-color: rgba(232, 235, 244, 0.75);
     border-radius: 0 0 0 8px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    z-index: 10001; /* Make sure burger icon is above everything */
+    z-index: 10001;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease; /* Smooth transition for transform */
+    transition: transform 0.3s ease;
 }
 
 .burger-icon div {
@@ -89,54 +90,47 @@ nav.pcheader ul li a {
     top: -10px;
 }
 
-/* Initial state of the menu overlay, hidden by default */
+/* Menu Overlay */
 .menu-overlay {
-    display: none;  /* Start off with menu hidden */
     position: fixed;
-    top: -100%; /* Start off-screen */
+    top: -100%;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.9);
-    z-index: 10000; /* Ensure it's above everything else */
-    transition: top 0.5s ease;
-    display: flex;
+    z-index: 10000;
+    display: none;
     flex-direction: column;
-    overflow: hidden;
+    align-items: center;
+    transition: top 0.5s ease;
 }
 
-
-/* Mobile Navigation (links inside the menu) */
+/* Mobile Navigation Links */
 nav.mobile-nav ul {
     list-style: none;
     width: 100%;
-    padding: 0;
     margin: 0;
-    flex-grow: 1;
+    padding: 0;
 }
 
 nav.mobile-nav ul li {
-    width: 100%;
-    height: 92px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5em;
-    font-weight: bold;
-    text-align: center;
-    color: #fff;
-    box-sizing: border-box;
+    width: 100vw; /* Full viewport width */
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+    height: 100px; /* Adjust height as needed */
 }
 
-/* Link Styling */
 nav.mobile-nav ul li a {
+    display: block;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    padding: 20px 0; /* Vertical padding for better spacing */
+    text-align: center;
     color: #fff;
-    text-decoration: none;
+    font-family: 'TRUENO', sans-serif;
     font-size: 1.5em;
     font-weight: bold;
-    display: block;
-    width: 100%;
-    text-align: center;
+    text-decoration: none;
 }
 
 /* Individual Colors for Each Box */
@@ -144,33 +138,33 @@ nav.mobile-nav ul li:nth-child(1) { background-color: #4B4545; }
 nav.mobile-nav ul li:nth-child(2) { background-color: #645D5D; } 
 nav.mobile-nav ul li:nth-child(3) { background-color: #787272; } 
 nav.mobile-nav ul li:nth-child(4) { background-color: #938B8B; }
+
 /* Media Queries */
 
-/* For mobile, show burger menu */
+/* For mobile screens */
 @media (max-width: 1000px) {
     nav.pcheader {
-        display: none;
+        display: none; /* Hide PC header */
     }
 
     .burger-icon {
-        display: flex;
+        display: flex; /* Show burger menu */
     }
 
     .menu-overlay {
         display: flex;
     }
-
-    /* Fixes logo-box positioning */
-    .menu-overlay .logo-box {
-        position: relative;  /* Ensures logo box stays above the navigation */
-        padding-top: 20px; /* Adds padding above the logo-box */
-    }
 }
 
-/* For larger screens, hide burger menu and overlay */
+/* For larger screens */
 @media (min-width: 1001px) {
     .burger-icon,
     .menu-overlay {
         display: none;
     }
+}
+
+/* Prevent unwanted spacing under header */
+main {
+    padding-top: 70px; /* Adjust to match header height */
 }
