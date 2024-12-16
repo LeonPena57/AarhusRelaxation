@@ -121,6 +121,69 @@ body, html {
     text-align: center;
 }
 
+/* Media query for 1920x1080 and higher */
+@media screen and (min-width: 1920px) {
+    /* Top Section */
+    .top-section {
+        height: 490px; /* Reduced height of video to avoid cutting off images */
+    }
+
+    .background-video {
+        height: 100%; /* Ensure video covers full width but stays within the set height */
+    }
+
+    .logo-overlay img {
+        max-width: 400px; /* Increase logo size */
+    }
+
+    /* Grid Section */
+    .grid-item {
+        width: 640px; /* Adjust grid item size */
+        height: 590px; /* Adjust height proportionally */
+    }
+
+    .overlay h3 {
+        font-size: 32px; /* Increase overlay heading size */
+    }
+
+    .overlay button {
+        font-size: 28px; /* Increase button font size */
+        padding: 10px 50px; /* Adjust padding */
+    }
+}
+
+/* Media query for 2560x1440 and higher */
+@media screen and (min-width: 2560px) {
+    /* Top Section */
+    .top-section {
+        height: 760px; /* Keep the video height slightly taller */
+    }
+
+    .background-video {
+        height: 100%; /* Ensure video still covers full width and stays within height */
+    }
+
+    .logo-overlay img {
+        max-width: 500px; /* Keep the logo size proportional to the screen */
+    }
+
+    /* Grid Section */
+    .grid-item {
+        width: 853px; /* Slightly reduce width to prevent overflow */
+        height: 680px; /* Adjust height proportionally */
+    }
+
+    .overlay h3 {
+        font-size: 36px; /* Keep heading size large for visibility */
+    }
+
+    .overlay button {
+        font-size: 32px; /* Adjust button font size for consistency */
+        padding: 12px 60px; /* Adjust padding to balance with button text */
+    }
+}
+
+
 /* Mobile Adjustments */
 @media (max-width: 768px) {
     .top-section {
