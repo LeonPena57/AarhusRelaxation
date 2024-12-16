@@ -1,0 +1,102 @@
+/* General Footer Styles */
+footer {
+    border-radius: 20px;
+    background-color: #E8EBF4; /* Light gray background */
+    color: #1a1a1a; /* Black text */
+    padding: 35px 0;
+    margin-top: 0px;
+    font-size: 16px;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    text-align: center; /* Center the entire footer content */
+}
+
+/* Footer Content Wrapper */
+.footer-content {
+    max-width: 1200px; /* Center content in a max width container */
+    margin: 0 auto; /* Horizontally center the content */
+    padding: 0 20px; /* Add some padding for better spacing */
+}
+
+/* Logo */
+.logos {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.logos img {
+    height: 50px; /* Adjust the size of the logo */
+}
+
+/* Footer Columns */
+.footer-columns {
+    display: flex;
+    justify-content: center; /* Center the columns */
+    align-items: flex-start; /* Align columns to the top */
+    gap: 50px; /* Equal spacing between columns */
+    width: 100%;
+    text-align: center; /* Center the text within each column */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Individual Column Styles */
+.footer-columns .column {
+    flex: 1;
+    min-width: 200px; /* Prevent columns from shrinking too much */
+    margin: 0; /* Remove any margin causing imbalance */
+}
+
+/* Align header and list inline */
+.footer-columns .column h3 {
+    font-family: 'Contrail One', sans-serif;
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #d3511c; /* Orange text */
+    text-align: left; /* Align header text to the left */
+    margin-left: 10px; /* Add slight left padding for spacing */
+}
+
+.footer-columns .column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0 10px; /* Align list perfectly with the header */
+    text-align: left; /* Align list text to the left */
+}
+
+.footer-columns .column ul li {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #1a1a1a; /* Black text */
+    line-height: 1.8; /* Improved spacing for readability */
+}
+
+/* Links Styling */
+.footer-columns .column ul li a,
+.footer-bottom a {
+    color: inherit; /* Inherit the text color from the parent */
+    text-decoration: none; /* Remove underline from all links */
+}
+
+.footer-columns .column ul li a:hover,
+.footer-bottom a:hover {
+    color: #d3511c; /* Optional: Add hover effect with orange color */
+    text-decoration: none; /* Ensure no underline on hover */
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    margin-top: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #1a1a1a;
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin-top: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #1a1a1a;
+
+}

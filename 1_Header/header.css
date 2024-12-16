@@ -1,0 +1,174 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Sticky Header Styling (Fixed on top) */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999; /* Ensures it's on top of everything */
+    margin: 0;
+    padding: 0;
+}
+
+/* PC Header */
+nav.pcheader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(240, 242, 247, 0.95);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav.pcheader ul {
+    list-style: none;
+    display: flex;
+}
+
+nav.pcheader ul li {
+    margin: 0 20px;
+}
+
+nav.pcheader ul li a {
+    text-transform: uppercase;
+    font-family: 'TRUENO', sans-serif;
+    font-weight: 900;
+    font-size: 1.2em;
+    color: #1F1F1F;
+    text-decoration: none;
+}
+
+/* Burger Menu Icon */
+.burger-icon {
+    display: none;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 60px;
+    height: 60px;
+    background-color: #E8EBF4;
+    border-radius: 0 0 0 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10001; /* Make sure burger icon is above everything */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease; /* Smooth transition for transform */
+}
+
+.burger-icon div {
+    width: 30px;
+    height: 4px;
+    background-color: #000;
+    margin: 3px 0;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Burger to X animation */
+.burger-icon.active div:nth-child(1) {
+    transform: rotate(45deg);
+    position: relative;
+    top: 10px;
+}
+
+.burger-icon.active div:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-icon.active div:nth-child(3) {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -10px;
+}
+
+/* Menu Overlay */
+.menu-overlay {
+    position: fixed;
+    top: 0; /* Remove any space above */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 10000; /* Ensure it's above everything else */
+    transition: top 0.5s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Mobile Navigation (links inside the menu) */
+nav.mobile-nav ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+nav.mobile-nav ul li {
+    width: 100%;
+    height: 92px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+/* Link Styling */
+nav.mobile-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+/* Individual Colors for Each Box */
+nav.mobile-nav ul li:nth-child(1) { background-color: #4B4545; }
+nav.mobile-nav ul li:nth-child(2) { background-color: #645D5D; } 
+nav.mobile-nav ul li:nth-child(3) { background-color: #787272; } 
+nav.mobile-nav ul li:nth-child(4) { background-color: #938B8B; } 
+
+/* Media Queries */
+
+/* For mobile, show burger menu */
+@media (max-width: 1000px) {
+    nav.pcheader {
+        display: none;
+    }
+
+    .burger-icon {
+        display: flex;
+    }
+
+    .menu-overlay {
+        display: flex;
+    }
+
+    /* Fixes logo-box positioning */
+    .menu-overlay .logo-box {
+        position: relative;  /* Ensures logo box stays above the navigation */
+        padding-top: 20px; /* Adds padding above the logo-box */
+    }
+}
+
+/* For larger screens, hide burger menu and overlay */
+@media (min-width: 1001px) {
+    .burger-icon,
+    .menu-overlay {
+        display: none;
+    }
+}

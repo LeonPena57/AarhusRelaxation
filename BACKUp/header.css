@@ -1,0 +1,38 @@
+/* Sticky Header Styling */
+header {
+    position: fixed; /* Make header follow the user on scroll */
+    top: 0; /* Stick to the top */
+    left: 0;
+    width: 100%;
+    background-color: rgba(240, 242, 247, 0.75); /* 75% opacity background */
+    z-index: 1000; /* Ensure it stays above other content */
+    padding: 10px 0; /* Add vertical padding */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Optional: slight shadow for depth */
+}
+
+nav {
+    display: flex;
+    justify-content: center; /* Center nav links */
+    align-items: center;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none; /* Remove bullets */
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px; /* Horizontal spacing */
+}
+
+nav ul li a {
+    text-transform: uppercase;
+    font-family: 'TRUENO', sans-serif; /* Custom font */
+    font-weight: 900; /* Bold */
+    font-size: 1.2em;
+    color: #1F1F1F; /* Dark text */
+    text-decoration: none; /* Remove underline */
+}
