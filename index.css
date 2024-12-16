@@ -122,7 +122,7 @@ body, html {
 }
 
 /* Media query for 1920x1080 and higher */
-@media screen and (min-width: 1920px) {
+@media screen and (min-width: 1920px) and (max-width: 2559px) {
     /* Top Section */
     .top-section {
         height: 490px; /* Reduced height of video to avoid cutting off images */
@@ -151,6 +151,38 @@ body, html {
         padding: 10px 50px; /* Adjust padding */
     }
 }
+
+/* Media query for 2560x1440 and higher */
+@media screen and (min-width: 2560px) {
+    /* Top Section */
+    .top-section {
+        height: 760px; /* Keep the video height slightly taller */
+    }
+
+    .background-video {
+        height: 100%; /* Ensure video still covers full width and stays within height */
+    }
+
+    .logo-overlay img {
+        max-width: 500px; /* Keep the logo size proportional to the screen */
+    }
+
+    /* Grid Section */
+    .grid-item {
+        width: 853px; /* Slightly reduce width to prevent overflow */
+        height: 680px; /* Adjust height proportionally */
+    }
+
+    .overlay h3 {
+        font-size: 36px; /* Keep heading size large for visibility */
+    }
+
+    .overlay button {
+        font-size: 32px; /* Adjust button font size for consistency */
+        padding: 12px 60px; /* Adjust padding to balance with button text */
+    }
+}
+
 
 /* Mobile Adjustments */
 @media (max-width: 768px) {
