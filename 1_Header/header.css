@@ -21,7 +21,7 @@ nav.pcheader {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(240, 242, 247, 0.95);
+    background-color: rgba(240, 242, 247, 0.75);
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -51,7 +51,7 @@ nav.pcheader ul li a {
     right: 10px;
     width: 60px;
     height: 60px;
-    background-color: #E8EBF4;
+    background-color: rgba(232, 235, 244, 0.75); /* 75% opacity */
     border-radius: 0 0 0 8px;
     display: flex;
     flex-direction: column;
@@ -89,10 +89,11 @@ nav.pcheader ul li a {
     top: -10px;
 }
 
-/* Menu Overlay */
+/* Initial state of the menu overlay, hidden by default */
 .menu-overlay {
+    display: none;  /* Start off with menu hidden */
     position: fixed;
-    top: 0; /* Remove any space above */
+    top: -100%; /* Start off-screen */
     left: 0;
     width: 100%;
     height: 100%;
@@ -101,7 +102,9 @@ nav.pcheader ul li a {
     transition: top 0.5s ease;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
+
 
 /* Mobile Navigation (links inside the menu) */
 nav.mobile-nav ul {
@@ -140,8 +143,7 @@ nav.mobile-nav ul li a {
 nav.mobile-nav ul li:nth-child(1) { background-color: #4B4545; }
 nav.mobile-nav ul li:nth-child(2) { background-color: #645D5D; } 
 nav.mobile-nav ul li:nth-child(3) { background-color: #787272; } 
-nav.mobile-nav ul li:nth-child(4) { background-color: #938B8B; } 
-
+nav.mobile-nav ul li:nth-child(4) { background-color: #938B8B; }
 /* Media Queries */
 
 /* For mobile, show burger menu */
